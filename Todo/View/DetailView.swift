@@ -51,7 +51,7 @@ struct DetailView: View {
                     "id": UUID().uuidString,
                     "title": title,
                     "detail": detail,
-                    "createdAt": Timestamp(),
+                    "timestamp": Timestamp(),
                 ] as [String : Any]
                 if todo.title.isEmpty && todo.detail.isEmpty {
                     addTodo(data: data)

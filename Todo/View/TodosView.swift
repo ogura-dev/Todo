@@ -22,7 +22,7 @@ struct TodosView: View {
                         Text(todo.title)
                             .font(.system(size: 20, weight: .bold))
                         Spacer()
-                        Text(dateFormat(createdAt: todo.createdAt))
+                        Text(dateFormat(timestamp: todo.timestamp))
                             .font(.system(size: 12))
                     }
                 }
@@ -42,7 +42,7 @@ struct TodosView: View {
             }
             todos = querySnapshot!.documents.map { Todo.init(data: $0.data()) }
             todos = todos.sorted(by: {
-                $0.createdAt.compare($1.createdAt) == .orderedDescending
+                $0.timestamp.compare($1.timestamp) == .orderedDescending
             })
         }
     }
@@ -58,8 +58,8 @@ struct TodosView: View {
         }
     }
     
-    func dateFormat(createdAt: Timestamp) -> String {
-        let date = createdAt.dateValue()
+    func dateFormat(timestamp: Timestamp) -> String {
+        let date = timestamp.dateValue()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy/M/d hh:mm:ss"
         return dateFormatter.string(from: date)

@@ -13,12 +13,12 @@ struct Todo {
     var id: String
     var title: String
     var detail: String
-    var createdAt: Timestamp
+    var timestamp: Timestamp
     
     init(data: [String: Any]) {
         self.id = data["id"] as! String
         self.title = data["title"] as! String
         self.detail = data["detail"] as! String
-        self.createdAt = data["createdAt"] as! Timestamp
+        self.timestamp = data["timestamp"] as! Timestamp
     }
 }

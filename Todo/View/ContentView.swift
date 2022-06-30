@@ -14,7 +14,7 @@ struct ContentView: View {
         "id": UUID().uuidString,
         "title": "",
         "detail": "",
-        "createdAt": Timestamp()
+        "timestamp": Timestamp()
     ])
     
     var body: some View {
