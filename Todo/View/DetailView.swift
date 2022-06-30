@@ -1,5 +1,5 @@
 //
-//  AddView.swift
+//  DetailView.swift
 //  Todo
 //
 //  Created by ogura on 2022/06/30.
